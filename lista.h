@@ -10,9 +10,9 @@ typedef struct {
 
 void criarLista(Lista *lista);
 
-int elementoFinal(Lista *lista, int valor);
+int elementoNoFinal(Lista *lista, int valor);
 
-int elementoPosicao(Lista *lista, int posi, int valor);
+int inserirElementoPosicao(Lista *lista, int posi, int valor);
 
 int removerElementoPosicao(Lista *lista, int posi);
 
@@ -36,6 +36,4 @@ void imprimirLista(Lista *lista);
 
 
 
-/*01. Criar Lista: Inicializa uma nova lista vazia.
-02. Inserir Elemento no Final: Adiciona um elemento inteiro ao final da lista.
-03. Inserir Elemento em uma Posição: Adiciona um elemento inteiro em uma posição específica da lista.*/
+
