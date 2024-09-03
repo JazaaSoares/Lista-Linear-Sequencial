@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1725369692 source:c:\users\ana_j\onedrive\햞ea de trabalho\projetos c c++\ed\lls\lista-linear-sequencial\main.c
+	<stdio.h>
+	"lista.h"
+
+1725369649 c:\users\ana_j\onedrive\햞ea de trabalho\projetos c c++\ed\lls\lista-linear-sequencial\lista.c
+	"lista.h"
+	<stdlib.h>
+
+1725371497 c:\users\ana_j\onedrive\햞ea de trabalho\projetos c c++\ed\lls\lista-linear-sequencial\lista.h
+	<stdlib.h>
+	<stdio.h>
+
+1725369649 source:c:\users\ana_j\onedrive\햞ea de trabalho\projetos c c++\ed\lls\lista-linear-sequencial\lista.c
+	"lista.h"
+	<stdlib.h>
+

@@ -1,15 +1,8 @@
 #include <stdio.h>
-#include "lista.c"
+#include "lista.h"
 
-
-
-int main()
-{
-    printf("Hello world!\n");
+int main() {
+    menu();
     return 0;
-
-
-
-
-
 }
+
