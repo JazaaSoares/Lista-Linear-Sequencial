@@ -19,7 +19,7 @@ int elementoNoFinal(Lista *lista, int valor){
     lista->elementos[lista->tamanho] = valor;
         lista->tamanho++;
         return 1;
-
+    imprimirLista(lista);
 } // : Adiciona um elemento inteiro ao final da lista.
 
 int inserirElementoPosicao(Lista *lista, int posi, int valor){
@@ -31,14 +31,16 @@ int inserirElementoPosicao(Lista *lista, int posi, int valor){
 
     if (posi < lista->tamanho) {
         lista->elementos[posi] = valor;
-        printf("Valor inserido com sucesso!");
+        printf("Valor inserido com sucesso!\n");
+        imprimirLista(lista);
         return 1;
     }
 
     if (posi == lista->tamanho) {
         lista->elementos[posi] = valor;
         lista->tamanho++;
-        printf("Valor inserido com sucesso!");
+        printf("Valor inserido com sucesso\n!");
+        imprimirLista(lista);
         return 1;
     }
 
@@ -58,7 +60,8 @@ int removerElementoPosicao(Lista *lista, int posi){
         lista->elementos[i] = lista->elementos[i+1];
     }
     lista->tamanho--;
-    printf("Elemento removido com sucesso!");
+    printf("Elemento removido com sucesso!\n");
+    imprimirLista(lista);
     return 1;
 
 } // remoção em posição específica
@@ -72,17 +75,16 @@ int removerElementoValor(Lista *lista, int valor){
         }
     }
     if(posi == -1){
-        printf("-ELEMENTO NAO ENCONTRADO-");
+        printf("-ELEMENTO NAO ENCONTRADO-\n");
         return 0;
     }
-    printf("Valor removido com sucesso!");
     return removerElementoPosicao(lista, posi);
 }
 
 int obterElementoPosicao(Lista *lista, int posi, int *valor){
 
     if (posi < 0 || posi >= lista->tamanho){
-        printf("-POSICAO INVALIDA!-");
+        printf("-POSICAO INVALIDA!-\n");
         return 0;
     }
     *valor = lista->elementos[posi];
@@ -151,8 +153,8 @@ void menu() {
                 printf("Digite o valor a ser inserido: ");
                 scanf("%d", &valor);
                 elementoNoFinal(&lista, valor);
-                printf("Valor inserido com sucesso!");
-                sleep(1);
+                printf("Valor inserido com sucesso!\n");
+                system("pause");
                 system("cls || clear");
                 break;
             case 2:
@@ -161,21 +163,21 @@ void menu() {
                 printf("Digite o valor a ser inserido: ");
                 scanf("%d", &valor);
                 inserirElementoPosicao(&lista, posicao, valor);
-                sleep(1);
+                system("pause");
                 system("cls || clear");
                 break;
             case 3:
                 printf("Digite a posicao do elemento a ser removido: ");
                 scanf("%d", &posicao);
                 removerElementoPosicao(&lista, posicao);
-                sleep(1);
+                system("pause");
                 system("cls || clear");
                 break;
             case 4:
                 printf("Digite o valor do elemento a ser removido: ");
                 scanf("%d", &valor);
                 removerElementoValor(&lista, valor);
-                sleep(1);
+                system("pause");
                 system("cls || clear");
                 break;
             case 5:
@@ -184,7 +186,7 @@ void menu() {
                 if (obterElementoPosicao(&lista, posicao, &valor)) {
                     printf("Valor na posicao %d: %d\n", posicao, valor);
                 }
-                sleep(1);
+                system("pause");
                 system("cls || clear");
                 break;
             case 6:
@@ -196,12 +198,12 @@ void menu() {
                 } else {
                     printf("Elemento não encontrado\n");
                 }
-                sleep(1);
+                system("pause");
                 system("cls || clear");
                 break;
             case 7:
                 printf("Tamanho da lista: %d\n", tamanhoLista(&lista));
-                sleep(1);
+                system("pause");
                 system("cls || clear");
                 break;
             case 8:
@@ -212,6 +214,8 @@ void menu() {
             case 0:
                 liberarLista(&lista);
                 printf("Saindo...\n");
+                sleep(1);
+                system("cls || clear");
                 break;
             default:
                 printf("Opcao inválida\n");
